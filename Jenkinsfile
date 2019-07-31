@@ -17,7 +17,7 @@ pipeline
 		{
 			steps
 			{
-				checkout
+				checkout scm
 				echo "Code Cloning is Done"
 			}
 		}
