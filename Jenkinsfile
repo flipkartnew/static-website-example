@@ -27,7 +27,7 @@ pipeline
 				echo "Code Cloning is Done"
 				scripts
 				{
-					build_number = $BUILD_NUMBER
+					build_number = "$BUILD_NUMBER"
 				}
 			}
 		}
