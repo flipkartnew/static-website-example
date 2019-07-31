@@ -1,3 +1,9 @@
+#!/groovy
+
+def DockerImage
+def tagname = 'anandtest/qube'
+def dockerhub = 'hub.docker.com'
+
 pipeline
 {
 	agent any
@@ -19,6 +25,22 @@ pipeline
 			{
 				checkout scm
 				echo "Code Cloning is Done"
+				scripts
+				{
+					build_number = $BUILD_NUMBER
+				}
+			}
+		}
+		
+		stage('Build an Docker Image from Dockerfile)
+		{
+			steps
+			{
+				scripts
+				{
+					DockerImage = docker.build ""${tagname}:${build_number}"
+					sh 'docker images'
+				}
 			}
 		}
 	}
