@@ -43,5 +43,17 @@ pipeline
 				}
 			}
 		}
+		
+		stage('Push Image to DockerHub')
+		{
+			steps
+			{
+				script
+				{
+					sh 'docker login --username="anandgit71" --password="anandgit12" ${dockerhub}'
+					DockerImage.push()
+				}
+			}
+		}
 	}
 }
