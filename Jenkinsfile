@@ -25,7 +25,7 @@ pipeline
 			{
 				checkout scm
 				echo "Code Cloning is Done"
-				scripts
+				script
 				{
 					build_number = "$BUILD_NUMBER"
 				}
@@ -36,7 +36,7 @@ pipeline
 		{
 			steps
 			{
-				scripts
+				script
 				{
 					DockerImage = docker.build "${tagname}:${build_number}"
 					sh 'docker images'
