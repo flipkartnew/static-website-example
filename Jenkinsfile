@@ -38,7 +38,7 @@ pipeline
 			{
 				script
 				{
-					DockerImage = docker.build "${tagname}:${build_number}"
+					DockerImage = docker.build "${tagname}"
 					sh 'docker images'
 				}
 			}
