@@ -12,5 +12,14 @@ pipeline
 				echo 'Cleanup is Done'
 			}
 		}
+		
+		stage('Checkout the latest code')
+		{
+			steps
+			{
+				checkout
+				echo "Code Cloning is Done"
+			}
+		}
 	}
 }
