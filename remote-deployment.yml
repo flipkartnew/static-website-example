@@ -1,0 +1,8 @@
+---
+ - name: Remote Server Deployment
+   hosts: all
+   become: True
+   
+   Tasks:
+   - name: Deploy into Remote servers 
+     shell: docker run -t -d -p 80:80 --name qube-app anandtest/qube:9
