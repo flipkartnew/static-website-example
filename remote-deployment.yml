@@ -4,5 +4,11 @@
    become: True
    
    tasks:
+   - name: Stop the exsisting container
+     shell: docker stop qube-app
+	 
+   - name: Remove the Stoped conatiber Image
+     shell: docker rmi -f $(docker images |grep 'anandtest/qube'|awk '{print $3}') 
+	 
    - name: Deploy into Remote servers 
-     shell: docker run -t -d -p 80:80 --name qube-app anandtest/qube:9
+     shell: docker run -t -d -p 80:80 --name qube-app anandtest/qube
