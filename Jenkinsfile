@@ -55,5 +55,16 @@ pipeline
 				}
 			}
 		}
+		
+		stage('Application deployment into remote servers')
+		{
+			steps
+			{
+				script
+				{
+					sh 'ansible-playbook -vvv remote-deployment.yml' 
+				}
+			}
+		}
 	}
 }
