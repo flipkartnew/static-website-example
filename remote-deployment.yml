@@ -5,7 +5,7 @@
    
    tasks:
    - name: Stop the exsisting container
-     shell: docker stop qube-app
+     shell: docker rm -f qube-app
 	 
    - name: Remove the Stoped conatiber Image
      shell: docker rmi -f $(docker images |grep 'anandtest/qube'|awk '{print $3}') 
