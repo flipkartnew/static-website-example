@@ -32,7 +32,7 @@ pipeline
 			}
 		}
 		
-		stage('Build an Docker Image from Dockerfile)
+		stage('Build an Docker Image from Dockerfile')
 		{
 			steps
 			{
